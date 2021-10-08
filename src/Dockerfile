@@ -2,16 +2,21 @@ FROM node:12-alpine
 
 MAINTAINER Vinícius Trainotti <vtrainotti@live.com>
 
-ENV HTTP_PORT=3000
+ENV NODE_ENV=production \
+    HOME=/opt/app-root/src/
 
-WORKDIR /opt/app-root/src
+RUN adduser -D -g '' odt
 
-COPY package*.json ./
+USER odt
 
-RUN npm install
+WORKDIR ${HOME}
 
-COPY . .
+COPY --chown=odt:odt package*.json ${HOME}
 
-EXPOSE 3000
+RUN npm ci --only=production
+
+COPY --chown=odt:odt index.js ${HOME}
+
+EXPOSE 80
 
 CMD ["npm", "start"]
