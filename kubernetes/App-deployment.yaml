@@ -16,9 +16,18 @@ spec:
     spec:
       containers:
       - name: objective-devops-test-deployment
-        image: 192.168.1.5:5000/objective-devops-test:dev
+        image: 192.168.1.5:5000/objective-devops-test:0.1-snapshot
+        env:
+        - name: HTTP_PORT
+          value: "80"
+        - name: LOG_WITHOUT_NEWLINE
+          value: "false"
+        - name: LOG_IGNORE_PATH
+          value: "false"
+        - name: JWT_HEADER
+          value: "false"
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         imagePullPolicy: Always
       imagePullSecrets:
         - name: regcred  
