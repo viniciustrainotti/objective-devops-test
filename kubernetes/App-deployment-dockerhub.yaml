@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: objective-devops-test-dockerhub
+  labels:
+    app: objective-devops-test-dockerhub-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: objective-devops-test-dockerhub-deployment
+  template:
+    metadata:
+      labels:
+        app: objective-devops-test-dockerhub-deployment
+    spec:
+      containers:
+      - name: objective-devops-test-dockerhub-deployment
+        image: trainotti95/objective-devops-test:0.1-snapshot
+        env:
+        - name: HTTP_PORT
+          value: "80"
+        - name: LOG_WITHOUT_NEWLINE
+          value: "false"
+        - name: LOG_IGNORE_PATH
+          value: "false"
+        - name: JWT_HEADER
+          value: "false"
+        ports:
+        - containerPort: 80
+#        imagePullPolicy: Always
+#      imagePullSecrets:
+#        - name: regcred  
