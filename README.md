@@ -12,7 +12,7 @@ Utilizado os seguintes recursos para execução do Teste.
 | Docker |  20.10.7 |
 | NodeJS | 12-alpine |
 
----
+
 ## Deployment - Manual
 
 Considerando que o Minikube e Docker já estão configurados corretamente. Realizar o clone do projeto, executando o comando abaixo em um diretório que seja possível criar uma pasta com o código fonte do projeto. 
@@ -71,7 +71,7 @@ $ cd objective-devops-test
 
 Na pasta do projeto, dentro de kubernetes, será executado o arquivo deployment.sh que irá subir todo o ambiente. Considerar os argumentos -ns para namespace e -os para o sistema operacional utilizado.
 
-WINDOWS - Recomendado utilizar o Git Bash
+Windows - Recomendado utilizar o Git Bash
 ```sh
 $ cd kubernetes
 $ ./deployment.sh -ns app -os windows
