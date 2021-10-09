@@ -87,3 +87,5 @@ Como resultado será o mesmo que o deployment manual.
 ## Explicativo do Teste - Vídeo
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/uE8Z5ID7L5M/0.jpg)](https://www.youtube.com/watch?v=uE8Z5ID7L5M)
+
+✨ Obrigado pela oportunidade! ✨
