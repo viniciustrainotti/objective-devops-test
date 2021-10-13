@@ -7,6 +7,8 @@ ENV NODE_ENV=production \
 
 # adduser -D (Don't assign a password) -g '' (GECOS without fullname) odt (objective devops test)
 RUN adduser -D -g '' odt
+# creante workdir and permissions user odt:odt
+RUN mkdir -p ${HOME} && chown -R odt:odt ${HOME}
 # Declare odt user
 USER odt
 # Declare WORKDIR = /opt/app-root/src/
